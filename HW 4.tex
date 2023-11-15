@@ -1,0 +1,135 @@
+% Import Packages
+\usepackage{amsthm,amssymb}
+\usepackage[mathscr]{euscript}
+\usepackage{bbm}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+%Define custom commands
+\newcommand{\Tau}{\mathscr{T}}
+\newcommand{\Beta}{\mathscr{B}}
+\newcommand{\Part}{\mathscr{D}}
+\newcommand{\R}{\mathbbm{R}}
+\newcommand{\Z}{\mathbbm{Z}}
+\newcommand{\N}{\mathbbm{N}}
+\newcommand{\Proof}{\textbf{\underline{Proof:}}}
+\newcommand{\Claim}{\textbf{\underline{Claim:}}}
+\newcommand{\link[1]}{\hspace*{0em plus 1fill}}
+\newcommand{\QED}{\link{\blacksquare}}
+
+%File Definitions
+\documentclass{article}
+\author{Ellie Sabatier}
+\title{HW 4}
+
+
+\begin{document}
+%QUESTION 1
+\section{Prove or disprove the following}
+\subsection*{(a) If $A, B \subset X$ are connected, then $A \cap B$ is connected}
+(False) $\Proof$ Take the metric space restriction on $\R$ where $X = ([0, 5], d)$ and find the partition $\Part$ such that
+$$\Part = \{x | 0 < x < 5\} \cup \{0, 5\}$$
+With the relevant quotient topology, we can see that $A = [0, 2) \cup (3, 5]$ is connected, since the obvious case of $[0, 2), (3, 5]$ is not actually disjoint; both contain $\{0, 5\}$. Further, $B = (1, 4)$ is clearly connected, since it is just an interval. But, 
+$$A \cap B = (1, 2) \cup (2, 3)$$
+which is clearly not connected, since we can take $U = (1, 2)$ and $V = (2, 3)$, two open disjoint subsets whose union is clearly $A \cap B$. So, the above property does not hold. $\QED$
+
+\subsection*{(b) If $A_i \subset X$ is connected for all $i \in I$ and $\cap_{i \in I}A_i \neq \emptyset$, then $\cup_{i \in I}A_i$ is connected}
+(True) $\Proof$ Assume the opposite. That is, assume that $A_i \subset X$ is connected for all $i \in I$ and $\cap_{i \in I}A_i \neq \emptyset$, but that $\cup_{i \in I}A_i$ is not connected. Now, $\exists U, V$ open, nonempty, disjoint in $X$, where $U \cup V = \cup_{i \in I}A_i$; choose some point $p \in \cup_{i \in I}A_i$. Now, $p \in U$ or $V$; say it is in $U$. Then, because $A_i$ is connected, it must lay entirely in $U$; this is true for any $i \in I$, which violates the assumption that V is nonempty. This is a contradiction, so  $\cup_{i \in I}A_i$ must be connected. $\QED$
+
+\subsection*{(c) If $X$ or $Y$ is connected, then $X \times Y$ is connected}
+(False) $\Proof$ Let $X, Y$ be topological spaces, where $X$ is connected and $Y$ is not. Now, because $Y$ is not connected, $\exists U, V$ open such that $U \cup V = Y$ and $U \cap V = \emptyset$. Now, it is clear that
+$$X \times U \cap X \times V = \emptyset$$
+and further,
+$$X \times U \cup X \times V = X \times Y$$
+So, there are two open disjoint subsets of $X \times Y$ whose union is $X \times Y$; $X \times Y$ is not connected, by definition. $\QED$
+
+\subsection*{(d) If $X, Y$ are connected, then $X \times Y$ is connected}
+(True) $\Proof$ Assume the opposite. That is, assume that there is some $X, Y$ connected for which $X \times Y$ is not connected. Then, there must exist some $U, V$ open such that $U \cap V = \emptyset$ and $U \cup V = X \times Y$.  \\ \\
+Now, clearly $\exists X_1, X_2, Y_1, Y_2$ such that $U = X_1 \times Y_1$ and $V = X_2 \times Y_2$; further, since $U, V$ open, $X_1, X_2, Y_1, Y_2$ must also be open, and since $U \cup V = X \times Y$, we must have
+$$X_1 \cup X_2 = X$$
+$$Y_1 \cup Y_2 = Y$$
+Additionally, it must be the case that either
+$$X_1 \cap X_2 = \emptyset$$
+or
+$$Y_1 \cap Y_2 = \emptyset$$
+since, $U, V$ disjoint; but this would mean that whichever the above is true for would divide either X or Y respectively, which is a contradiction. So, if $X, Y$ are connected, then $X \times Y$ is connected. $\QED$
+
+\subsection*{(e) If $X_1, \cdots , X_n$ are connected, then $X_1 \times \cdots \times X_n$ is connected}
+$\Proof$ Assume the opposite. That is, assume that there is some $X_1, \cdots , X_n$ connected, where $X_1 \times \cdots \times X_n$ is not connected. Now, $\exists U, V$ open and disjoint such that $U \cup V = X_1 \times \cdots \times X_n$; because $n$ is finite, we have
+$$U = u_1 \times u_2 \times \cdots \times u_n$$
+$$V = v_1 \times v_2 \times \cdots \times v_n$$
+And further, because $U, V$ disjoint, there must be at least one $i \in \{1, 2, \cdots, n\}$ such that $u_i \cap v_i = \emptyset$, and since $U \cup V = X_1 \times \cdots \times X_n, u_i \cup v_i = X_i$. This would seperate $X_i$, which is a contradiction, so the product $X_1 \times \cdots \times X_n$ must be connected. $\QED$
+
+\subsection*{(f) If $(X_i)_{i \in I}$ are connected, then $\Pi_{i \in I}A_i$ with the product topology is connected}
+(False) $\Proof$ Let $X_i = \R$ for all $i \in I$, and let $A_i = (0, 1) \cup (2, 3)$. Now take $U, V$ defined as such:
+$$U = (0, 1) \times A_2 \times \cdots \times A_n \times A_i \times \cdots$$
+$$V = (2, 3) \times A_2 \times \cdots \times A_n \times A_i \times \cdots$$
+where for all $i < n$, we take any open set in $A_i$ instead of just sets where $U_i = A_i$. Now, the intersection $U \times V = \emptyset$, since the first components are disjoint; similarly, their union is
+$$U \cup V = A_1 \times A_2 \times \cdots \times A_n \times A_i \times \cdots = \Pi_{i \in I}A_i$$
+And they are both nonempty; these seperate $\Pi_{i \in I}A_i$. $\QED$
+
+\subsection*{(g) $\R^\omega$ with the box topology is connected}
+(False) $\Proof$ Take some $a \in \R^\omega$. This consists of a sequence such that
+$$a = a_1 \times a_2 \times \cdots $$
+and either converges or does not converge. Now, we can take the open ball $B_1(a)$, and through arbitrary union create two open sets: one that is the arbitrary union of the balls around all a's that converge, and the other the arbitrary union of the balls around all a's that do not converge. Because a cannot both converge and not converge, these two sets are disjoint, and they are clearly open and nonempty as well. Because a cannot neither converge nor not converge, we know that they contain all $a \in \R^\omega$; these two sets seperate $\R^\omega$, so $\R^\omega$ with the box topology is not connected. $\QED$
+
+%QUESTION 2
+\section{Let $A \subset \R^n$ be open. Prove that $A$ is connected if and only if $A$ is path connected}
+$\Proof$ $(\Leftarrow)$ (Contrapositive) Assume $A$ is not connected. Then, $\exists U, V$ open and disjoint such that $U \cup V = A$; choose $p, q$ such that $p \in U$, $q \in V$. \\ \\
+$\Claim$ there is no path from p to q. \\ \\
+Assume the opposite. That is, assume that $\exists f: [a, b] \rightarrow A$ continuous such that $f(a) = p$ and $f(b) = q$. But, $f^{-1}(U)$ and $f^{-1}(V)$ must be open and disjoint, which would disconnect $[a, b]$; this is a contradiction, so there must be no path from p to q, and therefore $(\Leftarrow)$ must be true by contrapositive. \\ \\
+$(\Rightarrow)$ Assume A is connected, and choose some $p, q \in A$ such that $p \neq q$. Now, because A is connected, we know that all projections of A must also be connected, and since connected projections of $R^n$ are just intervals, each projection can easily be seen to be path connected. This gives us continuous maps $f_i : [a, b] \rightarrow \R$ where $f_i(a) = \pi_i(p), f_i(b) = \pi_i(q)$ for all $i \in [1, n]$, and because the product of continuous functions is continuous, we know know that 
+$$f : \{[a_1, b_1], [a_2, b_2], \cdots, [a_n, b_n]\} \rightarrow \R^n= f_1 \times f_2 \times \cdots \times f_n$$
+is continuous. Further, we can take the restriction of this $f$ on $A$, which is also continuous, and then map the finite set of uncountable infinities $\{[a_1, b_1], [a_2, b_2], \cdots, [a_n, b_n]\}$ to the uncountably infinite $[a, b]$, giving us the new continuous function
+$$f : [a, b] \rightarrow A$$
+So, A is path connected by definition. $\QED$
+
+%QUESTION 3
+\section{Prove that if $X$ is a connected metric space with more than one point, then $X$ is uncountable}
+$\Proof$ Assume the opposite. That is, assume there exists some connected metric space $X$ with more than one point such that $X$ is countable. Now, there are two possibilities:
+\begin{itemize}
+	\item X is finite
+	\item X is countably infinite
+\end{itemize}
+If X is finite, then for any $x \in X$ we can choose an $\epsilon > 0$ such that 
+$$\epsilon < \textrm{inf} \{d(u, v) \; | \; \forall u, v \textrm{ where } u \neq v\}$$
+Now, the open ball $B_\epsilon(x) = \{x\}$, so singleton sets are open. But, one can then easily generate $U, V$ open and disjoint such that $U \cup V = X$ and $U \cap V = \emptyset$, since arbitrary union of open sets is open and there are is than one point in X. This is a contradiction, so X cannot be finite. \\ \\
+So, X must be countably infinite, so there exists a bijection $f: X \rightarrow \N$. Now, choose some $x \in X$, and let the open interval $I \subset \R$ be defined as 
+$$I = (\textrm{inf}\{\delta \; |\; \exists y \in X \textrm{ such that } d(x, y) = \delta \}, \textrm{sup}\{\delta \; |\; \exists y \in X \textrm{ such that } d(x, y) = \delta \})$$
+If it is the case that the lower bound of $I$ is not equal to 0, or that the lower and upper bounds of $I$ are the same, then we can define $\epsilon$ less than that lower bound and form the singleton set {x}; proceeding as with the finite case to disconnect X. So, it must be the case that the lower bound is greater than 0 and $I$ is uncountably infinite. \\ \\
+$\Claim$ $\exists\epsilon \in I$ such that $\forall y \in X,$ $d(x, y) \neq \epsilon$ \\ \\
+Assume the opposite, and let $D: I \rightarrow \N$ be defined as $D(\epsilon) = f^{-1}(d^{-1}(\epsilon))$. Now clearly this is injective, since by assumption $\exists y \in X$ for all $\epsilon$, and a unique $n \in \N$ for each $y$ where $d(x, y) = \epsilon$. Further, it must be surjective, since for any $n \in \N$, there is a unique $y \in X$, and thus $d(x, y) \in I$. \\ $\therefore$ $D$ is a bijective function between an uncountable and countable set, which is a contradiction, so we must have such an $\epsilon$. \\ \\
+Now, take the open set $B_\epsilon(x)$. For any $y \notin B_\epsilon(x)$, we know $d(x, y) > \epsilon$; we can choose $\delta > 0$ such that $\delta + \epsilon < d(x, y)$, giving us an open ball $B_\delta(y)$ that is disjoint from $B_\epsilon(x)$. We can then take the arbitrary union of all such balls around all such $y$, giving us an open set disjoint from $B_\epsilon(x)$, which contains all $y \in X$ where $y \notin B_\epsilon(x)$, seperating $X$. This is a contradiction, so $X$ must be uncountable. $\QED$
+%Claim: some sequence $(x_n)_{n \in \N}$ must converge to x. \\ \\
+%Assume otherwise. Then, $\exists \epsilon > 0$ such that $\forall y \in X, d(x, y) > \epsilon$. But then, set
+%$$U = B_{{\epsilon}\over{2}}(x)$$
+%$$V = \bigcup_{y \in X, y \neq x}B_{{\epsilon}\over{2}}(y)$$
+%Because arbitrary union of open sets, these two sets are open; further, they are disjoint, and their union is X, which violates the assumption that X is connected. So, for every $x \in X$, there must be some sequence $(x_n)_{n \in \N}$ that converges to $x$. \\ \\
+%Now, taking our arbitrary $x$, we know that the sequence $(x_n)_{n \in \N}$ exists, and further, since $x_n \in X$, the sequences $(x_m)_{m \in \N}$ converging to each $x_n$ must also exist, and so on. But, this implies a countably infinite number of countably infinite $x_m$'s, which makes the $x_m$'s uncountably infinite. But all $x_m \in X$, which is countable; this is a contradiction, so X cannot be countably infinite either; X must be uncountably infinite. $\QED$
+
+%QUESTION 4
+\section{}
+\subsection*{(a) Let $(x_n)_{n \in \N}$ be a sequence in the product space $\Pi X_\alpha$. Prove that it converges to some point $x$ if and only if $(\pi_\alpha(x_n))_{n \in \N}$ converges to $\pi_\alpha(x)$ for all $\alpha$}
+$\Proof$ $(\Rightarrow)$ Assume that $(x_n)_{n \in \N}$ converges to some point $x$. Now, because $(x_n)_{n \in \N}$ converges to $x,$ $\exists$ some neightborhood $U$ of $x$ and $N \in \N$ such that for any $n > N$, $x_n \in U$. It follows then that $\pi_\alpha(x_n) \in \pi_\alpha(U)$ for any $\alpha$, and further, $\pi_\alpha(x) \in \pi_\alpha(U)$, so by definition $(\pi_\alpha(x_n))_{n \in \N}$ converges to $\pi_\alpha(x)$ for all $\alpha$. \\ \\
+$(\Leftarrow)$ Assume that $(\pi_\alpha(x_n))_{n \in \N}$ converges to $\pi_\alpha(x)$ for all $\alpha$. This means that $\forall \alpha, \exists$ some neighborhood $U_\alpha$ and $N_\alpha \in \N$ such that for all $n > N_\alpha$, $\pi_\alpha(x_n) \in U_\alpha$. Now, because every $U_\alpha$ is open, we know that $U = \Pi_\alpha(U_\alpha)$ is open; further, if we set $N = $ max$\{N_\alpha | \forall \alpha\}$ (which we can do, since there are only finitely many $\alpha$'s such that $U_\alpha \neq X_\alpha$, in which case any $x_n \in U_\alpha$), we know that $\pi_\alpha(x_n) \in U_\alpha$ holds for any $n > N \geq N_\alpha$.\\ \\
+Putting this together, we know that for any $n > N$, $x_n \in U$, and further that $x \in U$ and U open, making it a neighborhood of $x$; $(x_n)_{n \in N}$ converges to $x$ by definition. $\QED$
+
+\subsection*{(b) How much of the previous result stays true if one uses the box topology instead of the product topology?}
+If we use the box topology, we cannot rule out the possibility that for each sequential $\alpha$, $N_\alpha$ increases, going on infinitely; this would remove our ability to find an upper bound $N$, meaning that this property would not necessarily hold. So, while $(\Rightarrow)$ would remain true, we would be unable to verify $(\Leftarrow)$. 
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
