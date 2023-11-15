@@ -1,0 +1,1685 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  DiDFinal
+       log:  C:\Users\irony\OneDrive\Desktop\STATA\DiDFinal\DiDFinal.log
+  log type:  text
+ opened on:  12 Jun 2023, 02:35:31
+
+. 
+. /* REPLICATION */
+. use "data\maindata.dta"
+
+. xtreg   lnhouseprice   L1.wtotaldeaths time9 time10 time12 time13 time14 time15 time16 time17 time18 time19 time21 time22 time23 time24 time25 time26 time27 time28 time29 time30
+>  time31 time32 time33 time34 time35 time36 time37 time38 time39 time40 time41 time42 time43 time44 time45 time46 time47 time48 time49 time50 time51 time52 time53 time54 time55 t
+> ime56 time57 time58 time59 time60 time61 time62 time63 time64 time65 time66 time67 time68 time69 time70 time71 time72 time73 time74 time75 time76 time77 time78 time79 time80 tim
+> e81 time82 time83 time84 time85 time86 time87 time88 time89 time90 time91 time92 time93 time94 time95 time96 time97 time98 time99 time100 time101 time102 time103 time104 time105
+> , fe cluster(region)
+
+Fixed-effects (within) regression               Number of obs     =      1,049
+Group variable: region                          Number of groups  =         11
+
+R-squared:                                      Obs per group:
+     Within  = 0.9874                                         min =         94
+     Between = 0.0009                                         avg =       95.4
+     Overall = 0.9717                                         max =         96
+
+                                                F(10,10)          =          .
+corr(u_i, Xb) = -0.0017                         Prob > F          =          .
+
+                                (Std. err. adjusted for 11 clusters in region)
+------------------------------------------------------------------------------
+             |               Robust
+lnhouseprice | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+wtotaldeaths |
+         L1. |  -.0133031   .0049215    -2.70   0.022    -.0242689   -.0023373
+             |
+       time9 |   .0389376   .0347164     1.12   0.288    -.0384154    .1162907
+      time10 |   .0708028    .023926     2.96   0.014     .0174925    .1241132
+      time12 |   .0728149   .0273828     2.66   0.024     .0118023    .1338275
+      time13 |   .0510098   .0240889     2.12   0.060    -.0026637    .1046833
+      time14 |   .0712572   .0222234     3.21   0.009     .0217403    .1207741
+      time15 |   .1253126   .0189913     6.60   0.000     .0829973    .1676279
+      time16 |   .1081245   .0237584     4.55   0.001     .0551875    .1610614
+      time17 |   .1055521   .0264494     3.99   0.003     .0466192    .1644851
+      time18 |   .1233827   .0238621     5.17   0.000     .0702146    .1765507
+      time19 |   .1323595   .0226215     5.85   0.000     .0819556    .1827634
+      time21 |    .141605   .0200833     7.05   0.000     .0968567    .1863533
+      time22 |   .1928667   .0179988    10.72   0.000     .1527629    .2329705
+      time23 |   .1931976   .0271721     7.11   0.000     .1326545    .2537407
+      time24 |   .1667251   .0301206     5.54   0.000     .0996122     .233838
+      time25 |   .1612912   .0348181     4.63   0.001     .0837117    .2388708
+      time26 |   .1827789    .026646     6.86   0.000     .1234078      .24215
+      time27 |   .2192534   .0254734     8.61   0.000     .1624951    .2760116
+      time28 |   .2019451   .0232548     8.68   0.000     .1501302    .2537601
+      time29 |   .2137819   .0199471    10.72   0.000      .169337    .2582267
+      time30 |   .2381554    .028815     8.26   0.000     .1739515    .3023593
+      time31 |   .2798895   .0251455    11.13   0.000     .2238618    .3359171
+      time32 |   .2421694   .0359133     6.74   0.000     .1621497    .3221892
+      time33 |   .2200966    .033736     6.52   0.000     .1449282    .2952651
+      time34 |   .3009978   .0412699     7.29   0.000     .2090427    .3929529
+      time35 |   .3020304   .0359507     8.40   0.000     .2219272    .3821335
+      time36 |   .3258553    .033445     9.74   0.000     .2513353    .4003753
+      time37 |   .3558368   .0379029     9.39   0.000     .2713838    .4402897
+      time38 |   .3717921   .0199639    18.62   0.000     .3273097    .4162745
+      time39 |    .368257   .0318319    11.57   0.000      .297331    .4391829
+      time40 |   .3395121   .0288421    11.77   0.000      .275248    .4037762
+      time41 |   .3415862   .0279556    12.22   0.000     .2792974    .4038751
+      time42 |   .4145538   .0445577     9.30   0.000     .3152731    .5138346
+      time43 |   .4379479   .0333415    13.14   0.000     .3636584    .5122373
+      time44 |   .4767364   .0244098    19.53   0.000     .4223479    .5311249
+      time45 |   .4560127    .030671    14.87   0.000     .3876734    .5243519
+      time46 |   .5142619   .0310663    16.55   0.000     .4450418     .583482
+      time47 |   .5386057   .0314727    17.11   0.000     .4684802    .6087312
+      time48 |   .5106269   .0356632    14.32   0.000     .4311644    .5900895
+      time49 |   .5109668   .0362615    14.09   0.000     .4301712    .5917624
+      time50 |   .5986242   .0249468    24.00   0.000     .5430393    .6542091
+      time51 |   .6072745   .0279233    21.75   0.000     .5450576    .6694914
+      time52 |   .6069867   .0251663    24.12   0.000     .5509126    .6630607
+      time53 |   .6307611   .0288872    21.84   0.000     .5663965    .6951257
+      time54 |   .7041993   .0293913    23.96   0.000     .6387114    .7696871
+      time55 |   .7308686    .017899    40.83   0.000     .6909872    .7707501
+      time56 |   .7113495   .0306968    23.17   0.000     .6429527    .7797463
+      time57 |   .7263101   .0289601    25.08   0.000     .6617831    .7908371
+      time58 |   .7340914   .0239117    30.70   0.000     .6808128      .78737
+      time59 |   .8247468   .0307465    26.82   0.000     .7562392    .8932543
+      time60 |    .817749     .02806    29.14   0.000     .7552274    .8802706
+      time61 |    .847207     .02714    31.22   0.000     .7867353    .9076786
+      time62 |   .8568972   .0209852    40.83   0.000     .8101394    .9036551
+      time63 |   .8887037   .0175394    50.67   0.000     .8496235    .9277839
+      time64 |   .8997046   .0232924    38.63   0.000     .8478058    .9516033
+      time65 |   .8944775   .0269105    33.24   0.000     .8345173    .9544378
+      time66 |    .939307   .0173286    54.21   0.000     .9006964    .9779176
+      time67 |   .9617715   .0117528    81.83   0.000     .9355846    .9879584
+      time68 |   .9834045   .0213633    46.03   0.000     .9358042    1.031005
+      time69 |    1.02947   .0332054    31.00   0.000     .9554833    1.103456
+      time70 |    1.03627   .0328246    31.57   0.000     .9631321    1.109408
+      time71 |   1.119578    .018039    62.06   0.000     1.079384    1.159771
+      time72 |   1.142625   .0314252    36.36   0.000     1.072605    1.212645
+      time73 |   1.101699   .0219906    50.10   0.000     1.052701    1.150698
+      time74 |   1.126429   .0332087    33.92   0.000     1.052436    1.200423
+      time75 |   1.131157    .031383    36.04   0.000     1.061231    1.201083
+      time76 |   1.158164   .0295762    39.16   0.000     1.092264    1.224064
+      time77 |   1.189268   .0289488    41.08   0.000     1.124766     1.25377
+      time78 |   1.231591   .0251217    49.03   0.000     1.175616    1.287565
+      time79 |   1.257826   .0255544    49.22   0.000     1.200887    1.314765
+      time80 |   1.278551   .0256905    49.77   0.000     1.221309    1.335793
+      time81 |   1.320292   .0188574    70.01   0.000     1.278275    1.362309
+      time82 |   1.324742    .017998    73.61   0.000      1.28464    1.364844
+      time83 |   1.371283   .0122023   112.38   0.000     1.344094    1.398471
+      time84 |   1.384935   .0235533    58.80   0.000     1.332455    1.437415
+      time85 |    1.38924   .0235107    59.09   0.000     1.336855    1.441625
+      time86 |   1.438155   .0204763    70.23   0.000      1.39253    1.483779
+      time87 |   1.455621   .0213707    68.11   0.000     1.408004    1.503238
+      time88 |   1.500644   .0242784    61.81   0.000     1.446548    1.554739
+      time89 |   1.527622   .0237691    64.27   0.000     1.474661    1.580582
+      time90 |    1.60864   .0290052    55.46   0.000     1.544013    1.673268
+      time91 |   1.665539   .0326004    51.09   0.000     1.592901    1.738177
+      time92 |   1.706514     .03303    51.67   0.000     1.632918    1.780109
+      time93 |   1.771774   .0270476    65.51   0.000     1.711508     1.83204
+      time94 |   1.844806   .0285894    64.53   0.000     1.781105    1.908507
+      time95 |   1.925141   .0326633    58.94   0.000     1.852363    1.997919
+      time96 |   2.013917   .0293707    68.57   0.000     1.948475    2.079359
+      time97 |   2.111561   .0302494    69.81   0.000     2.044161    2.178961
+      time98 |   2.195816    .023755    92.44   0.000     2.142886    2.248745
+      time99 |   2.222485   .0394042    56.40   0.000     2.134687    2.310283
+     time100 |   2.173394   .0272649    79.71   0.000     2.112644    2.234144
+     time101 |   2.140692   .0357242    59.92   0.000     2.061093     2.22029
+     time102 |   2.089002   .0233686    89.39   0.000     2.036933     2.14107
+     time103 |    1.96323   .0386829    50.75   0.000     1.877039    2.049421
+     time104 |   1.807142    .018135    99.65   0.000     1.766735     1.84755
+     time105 |   1.768053   .0189063    93.52   0.000     1.725927    1.810178
+       _cons |   10.18681    .013217   770.74   0.000     10.15736    10.21626
+-------------+----------------------------------------------------------------
+     sigma_u |   .0860306
+     sigma_e |  .07649551
+         rho |  .55846679   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+
+. outreg2 using myfile
+dir : seeout
+
+. 
+. /* DiD APPROACH */
+. //Restructuring data
+. //We need to keep unemployment, region, time, lnhouseprice, wtotaldeaths, houseprice, and totaldeaths
+. keep unemp time region lnhouseprice wtotaldeaths houseprice totaldeaths
+
+. did_multiplegt lnhouseprice region time wtotaldeaths, controls(unemp)
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 |  .0235661   .0912889  -.1553602   .2024925        516        151 
+
+. 
+end of do-file
+
+. ssc install honestDiD
+checking honestdid consistency and verifying not already installed...
+installing into C:\Users\irony\ado\plus\...
+installation complete.
+
+. help honestdid
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time wtotaldeaths, controls(unemp)
+--Break--
+r(1);
+
+end of do-file
+
+--Break--
+r(1);
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time wtotaldeaths//, controls(unemp)
+/ invalid name
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time wtotaldeaths
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 |  .0086231   .0094649  -.0099281   .0271743        562        167 
+
+. 
+end of do-file
+
+. ereturn list
+
+scalars:
+           e(effect_0) =  .0086231102645142
+        e(se_effect_0) =  .0094649051950671
+         e(N_effect_0) =  562
+  e(N_switchers_effec
+    t_0)               =  167
+
+macros:
+                e(cmd) : "did_multiplegt"
+
+matrices:
+          e(variances) :  1 x 1
+   e(didmgt_variances) :  1 x 1
+          e(estimates) :  1 x 1
+   e(didmgt_estimates) :  1 x 1
+
+. browse
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 |  .0036644   .0041569   -.004483   .0118119        562        167 
+
+. 
+end of do-file
+
+. codebook wtotaldeaths
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+wtotaldeaths                                                                                                                                                            (unlabeled)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                  Type: Numeric (float)
+
+                 Range: [0,12.3237]                   Units: 1.000e-07
+         Unique values: 20                        Missing .: 392/1,547
+
+                  Mean: .385955
+             Std. dev.:       1
+
+           Percentiles:     10%       25%       50%       75%       90%
+                              0         0         0   .424955   1.27487
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. summarize totaldeaths
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+ totaldeaths |      1,155    .9082251    2.353189          0         29
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. egen treatmentDeaths = r(max) - totaldeaths
+unknown egen function r()
+r(133);
+
+end of do-file
+
+r(133);
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. egen treatmentDeaths = max(totaldeaths) - totaldeaths
+varlist not allowed
+r(101);
+
+end of do-file
+
+r(101);
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. egen totaldeathsMax = max(totaldeaths)
+
+. 
+end of do-file
+
+. browse
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time treatmentDeaths
+variable treatmentDeaths not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. egen treatmentDeaths = totaldeathsMax - totaldeaths
+unknown egen function totaldeathsMax()
+r(133);
+
+end of do-file
+
+r(133);
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. gen treatmentDeaths = totaldeathsMax - totaldeaths
+(392 missing values generated)
+
+. 
+end of do-file
+
+. browse
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time treatmentDeaths
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 | -.0036644   .0046834  -.0128438    .005515        562        167 
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. use "data\maindata.dta"
+no; dataset in memory has changed since last saved
+r(4);
+
+end of do-file
+
+r(4);
+
+. close all
+command close is unrecognized
+r(199);
+
+. clear all
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. use "data\maindata.dta"
+
+. 
+end of do-file
+
+. browse
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. //We need to keep unemployment, region, time, lnhouseprice, wtotaldeaths, houseprice, and totaldeaths
+. keep unemp time region lnhouseprice wtotaldeaths houseprice totaldeaths
+
+. egen totaldeathsMax = max(totaldeaths)
+
+. gen treatmentDeaths = totaldeathsMax - totaldeaths
+(392 missing values generated)
+
+. did_multiplegt lnhouseprice region time treatmentDeaths, control(unemp)
+option control() not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time treatmentDeaths, controls(unemp)
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 | -.0100145   .0729358  -.1529686   .1329396        516        151 
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, controls(unemp)
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 |  .0100145   .0646873  -.1167726   .1368017        516        151 
+
+. 
+end of do-file
+
+. clear all
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. xtreg   lnhouseprice   L1.wtotaldeaths time9 time10 time12 time13 time14 time15 time16 time17 time18 time19 time21 time22 time23 time24 time25 time26 time27 time28 time29 time30
+>  time31 time32 time33 time34 time35 time36 time37 time38 time39 time40 time41 time42 time43 time44 time45 time46 time47 time48 time49 time50 time51 time52 time53 time54 time55 t
+> ime56 time57 time58 time59 time60 time61 time62 time63 time64 time65 time66 time67 time68 time69 time70 time71 time72 time73 time74 time75 time76 time77 time78 time79 time80 tim
+> e81 time82 time83 time84 time85 time86 time87 time88 time89 time90 time91 time92 time93 time94 time95 time96 time97 time98 time99 time100 time101 time102 time103 time104 time105
+> , fe cluster(region)
+variable lnhouseprice not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. /* REPLICATION */
+. use "data\maindata.dta"
+
+. xtreg   lnhouseprice   L1.wtotaldeaths time9 time10 time12 time13 time14 time15 time16 time17 time18 time19 time21 time22 time23 time24 time25 time26 time27 time28 time29 time30
+>  time31 time32 time33 time34 time35 time36 time37 time38 time39 time40 time41 time42 time43 time44 time45 time46 time47 time48 time49 time50 time51 time52 time53 time54 time55 t
+> ime56 time57 time58 time59 time60 time61 time62 time63 time64 time65 time66 time67 time68 time69 time70 time71 time72 time73 time74 time75 time76 time77 time78 time79 time80 tim
+> e81 time82 time83 time84 time85 time86 time87 time88 time89 time90 time91 time92 time93 time94 time95 time96 time97 time98 time99 time100 time101 time102 time103 time104 time105
+> , fe cluster(region)
+
+Fixed-effects (within) regression               Number of obs     =      1,049
+Group variable: region                          Number of groups  =         11
+
+R-squared:                                      Obs per group:
+     Within  = 0.9874                                         min =         94
+     Between = 0.0009                                         avg =       95.4
+     Overall = 0.9717                                         max =         96
+
+                                                F(10,10)          =          .
+corr(u_i, Xb) = -0.0017                         Prob > F          =          .
+
+                                (Std. err. adjusted for 11 clusters in region)
+------------------------------------------------------------------------------
+             |               Robust
+lnhouseprice | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+wtotaldeaths |
+         L1. |  -.0133031   .0049215    -2.70   0.022    -.0242689   -.0023373
+             |
+       time9 |   .0389376   .0347164     1.12   0.288    -.0384154    .1162907
+      time10 |   .0708028    .023926     2.96   0.014     .0174925    .1241132
+      time12 |   .0728149   .0273828     2.66   0.024     .0118023    .1338275
+      time13 |   .0510098   .0240889     2.12   0.060    -.0026637    .1046833
+      time14 |   .0712572   .0222234     3.21   0.009     .0217403    .1207741
+      time15 |   .1253126   .0189913     6.60   0.000     .0829973    .1676279
+      time16 |   .1081245   .0237584     4.55   0.001     .0551875    .1610614
+      time17 |   .1055521   .0264494     3.99   0.003     .0466192    .1644851
+      time18 |   .1233827   .0238621     5.17   0.000     .0702146    .1765507
+      time19 |   .1323595   .0226215     5.85   0.000     .0819556    .1827634
+      time21 |    .141605   .0200833     7.05   0.000     .0968567    .1863533
+      time22 |   .1928667   .0179988    10.72   0.000     .1527629    .2329705
+      time23 |   .1931976   .0271721     7.11   0.000     .1326545    .2537407
+      time24 |   .1667251   .0301206     5.54   0.000     .0996122     .233838
+      time25 |   .1612912   .0348181     4.63   0.001     .0837117    .2388708
+      time26 |   .1827789    .026646     6.86   0.000     .1234078      .24215
+      time27 |   .2192534   .0254734     8.61   0.000     .1624951    .2760116
+      time28 |   .2019451   .0232548     8.68   0.000     .1501302    .2537601
+      time29 |   .2137819   .0199471    10.72   0.000      .169337    .2582267
+      time30 |   .2381554    .028815     8.26   0.000     .1739515    .3023593
+      time31 |   .2798895   .0251455    11.13   0.000     .2238618    .3359171
+      time32 |   .2421694   .0359133     6.74   0.000     .1621497    .3221892
+      time33 |   .2200966    .033736     6.52   0.000     .1449282    .2952651
+      time34 |   .3009978   .0412699     7.29   0.000     .2090427    .3929529
+      time35 |   .3020304   .0359507     8.40   0.000     .2219272    .3821335
+      time36 |   .3258553    .033445     9.74   0.000     .2513353    .4003753
+      time37 |   .3558368   .0379029     9.39   0.000     .2713838    .4402897
+      time38 |   .3717921   .0199639    18.62   0.000     .3273097    .4162745
+      time39 |    .368257   .0318319    11.57   0.000      .297331    .4391829
+      time40 |   .3395121   .0288421    11.77   0.000      .275248    .4037762
+      time41 |   .3415862   .0279556    12.22   0.000     .2792974    .4038751
+      time42 |   .4145538   .0445577     9.30   0.000     .3152731    .5138346
+      time43 |   .4379479   .0333415    13.14   0.000     .3636584    .5122373
+      time44 |   .4767364   .0244098    19.53   0.000     .4223479    .5311249
+      time45 |   .4560127    .030671    14.87   0.000     .3876734    .5243519
+      time46 |   .5142619   .0310663    16.55   0.000     .4450418     .583482
+      time47 |   .5386057   .0314727    17.11   0.000     .4684802    .6087312
+      time48 |   .5106269   .0356632    14.32   0.000     .4311644    .5900895
+      time49 |   .5109668   .0362615    14.09   0.000     .4301712    .5917624
+      time50 |   .5986242   .0249468    24.00   0.000     .5430393    .6542091
+      time51 |   .6072745   .0279233    21.75   0.000     .5450576    .6694914
+      time52 |   .6069867   .0251663    24.12   0.000     .5509126    .6630607
+      time53 |   .6307611   .0288872    21.84   0.000     .5663965    .6951257
+      time54 |   .7041993   .0293913    23.96   0.000     .6387114    .7696871
+      time55 |   .7308686    .017899    40.83   0.000     .6909872    .7707501
+      time56 |   .7113495   .0306968    23.17   0.000     .6429527    .7797463
+      time57 |   .7263101   .0289601    25.08   0.000     .6617831    .7908371
+      time58 |   .7340914   .0239117    30.70   0.000     .6808128      .78737
+      time59 |   .8247468   .0307465    26.82   0.000     .7562392    .8932543
+      time60 |    .817749     .02806    29.14   0.000     .7552274    .8802706
+      time61 |    .847207     .02714    31.22   0.000     .7867353    .9076786
+      time62 |   .8568972   .0209852    40.83   0.000     .8101394    .9036551
+      time63 |   .8887037   .0175394    50.67   0.000     .8496235    .9277839
+      time64 |   .8997046   .0232924    38.63   0.000     .8478058    .9516033
+      time65 |   .8944775   .0269105    33.24   0.000     .8345173    .9544378
+      time66 |    .939307   .0173286    54.21   0.000     .9006964    .9779176
+      time67 |   .9617715   .0117528    81.83   0.000     .9355846    .9879584
+      time68 |   .9834045   .0213633    46.03   0.000     .9358042    1.031005
+      time69 |    1.02947   .0332054    31.00   0.000     .9554833    1.103456
+      time70 |    1.03627   .0328246    31.57   0.000     .9631321    1.109408
+      time71 |   1.119578    .018039    62.06   0.000     1.079384    1.159771
+      time72 |   1.142625   .0314252    36.36   0.000     1.072605    1.212645
+      time73 |   1.101699   .0219906    50.10   0.000     1.052701    1.150698
+      time74 |   1.126429   .0332087    33.92   0.000     1.052436    1.200423
+      time75 |   1.131157    .031383    36.04   0.000     1.061231    1.201083
+      time76 |   1.158164   .0295762    39.16   0.000     1.092264    1.224064
+      time77 |   1.189268   .0289488    41.08   0.000     1.124766     1.25377
+      time78 |   1.231591   .0251217    49.03   0.000     1.175616    1.287565
+      time79 |   1.257826   .0255544    49.22   0.000     1.200887    1.314765
+      time80 |   1.278551   .0256905    49.77   0.000     1.221309    1.335793
+      time81 |   1.320292   .0188574    70.01   0.000     1.278275    1.362309
+      time82 |   1.324742    .017998    73.61   0.000      1.28464    1.364844
+      time83 |   1.371283   .0122023   112.38   0.000     1.344094    1.398471
+      time84 |   1.384935   .0235533    58.80   0.000     1.332455    1.437415
+      time85 |    1.38924   .0235107    59.09   0.000     1.336855    1.441625
+      time86 |   1.438155   .0204763    70.23   0.000      1.39253    1.483779
+      time87 |   1.455621   .0213707    68.11   0.000     1.408004    1.503238
+      time88 |   1.500644   .0242784    61.81   0.000     1.446548    1.554739
+      time89 |   1.527622   .0237691    64.27   0.000     1.474661    1.580582
+      time90 |    1.60864   .0290052    55.46   0.000     1.544013    1.673268
+      time91 |   1.665539   .0326004    51.09   0.000     1.592901    1.738177
+      time92 |   1.706514     .03303    51.67   0.000     1.632918    1.780109
+      time93 |   1.771774   .0270476    65.51   0.000     1.711508     1.83204
+      time94 |   1.844806   .0285894    64.53   0.000     1.781105    1.908507
+      time95 |   1.925141   .0326633    58.94   0.000     1.852363    1.997919
+      time96 |   2.013917   .0293707    68.57   0.000     1.948475    2.079359
+      time97 |   2.111561   .0302494    69.81   0.000     2.044161    2.178961
+      time98 |   2.195816    .023755    92.44   0.000     2.142886    2.248745
+      time99 |   2.222485   .0394042    56.40   0.000     2.134687    2.310283
+     time100 |   2.173394   .0272649    79.71   0.000     2.112644    2.234144
+     time101 |   2.140692   .0357242    59.92   0.000     2.061093     2.22029
+     time102 |   2.089002   .0233686    89.39   0.000     2.036933     2.14107
+     time103 |    1.96323   .0386829    50.75   0.000     1.877039    2.049421
+     time104 |   1.807142    .018135    99.65   0.000     1.766735     1.84755
+     time105 |   1.768053   .0189063    93.52   0.000     1.725927    1.810178
+       _cons |   10.18681    .013217   770.74   0.000     10.15736    10.21626
+-------------+----------------------------------------------------------------
+     sigma_u |   .0860306
+     sigma_e |  .07649551
+         rho |  .55846679   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. help did_multiplegt
+
+. codebook totaldeaths
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+totaldeaths                                                                                                                                                             (unlabeled)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                  Type: Numeric (byte)
+
+                 Range: [0,29]                        Units: 1
+         Unique values: 20                        Missing .: 392/1,547
+
+                  Mean: .908225
+             Std. dev.: 2.35319
+
+           Percentiles:     10%       25%       50%       75%       90%
+                              0         0         0         1         3
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic average_effect longdiff_placebo cluster(region)
+If you request the average_effect option,
+you need to request that at least one dynamic effect be computed.
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic dynamic(2) average_effect placebo(5) longdiff_placebo breps(5) cluster(region)
+By default, the command computes long-difference placebos. If the dynamic options are requested, the number
+of placebos requested cannot be larger than the number of dynamic effects.
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic dynamic(2) average_effect placebo(2) longdiff_placebo breps(5) cluster(region)
+
+The command was not able to estimate the treatment effect at the period when groups' treatment change.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+
+The command was not able to estimate the treatment effect 1
+periods after groups' treatment changes for the first time.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more dynamic effects than it is possible to do in your data.
+
+The command was not able to estimate the treatment effect 2
+periods after groups' treatment changes for the first time.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more dynamic effects than it is possible to do in your data.
+
+The command was not able to estimate the placebo 1
+periods before groups' treatment changes.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more placebos than it is possible to do in your data.
+
+The command was not able to estimate the placebo 2
+periods before groups' treatment changes.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more placebos than it is possible to do in your data.
+
+The command was not able to run till the end, presumably because it could not
+estimate all placebos and dynamic effects requested. Estimates are stored in e(),
+so you can type ereturn list to see which placebos and dynamic effects the command
+could estimate. To solve this problem, you will probably have to diminish the number
+of placebos or dynamic effects requested. See the help file for more information on the
+maximum number of dynamic effects and placebos the command can compute.
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic dynamic(1) average_effect placebo(1) longdiff_placebo breps(5) cluster(region)
+
+The command was not able to estimate the treatment effect at the period when groups' treatment change.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+
+The command was not able to estimate the treatment effect 1
+periods after groups' treatment changes for the first time.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more dynamic effects than it is possible to do in your data.
+
+The command was not able to estimate the placebo 1
+periods before groups' treatment changes.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more placebos than it is possible to do in your data.
+
+The command was not able to run till the end, presumably because it could not
+estimate all placebos and dynamic effects requested. Estimates are stored in e(),
+so you can type ereturn list to see which placebos and dynamic effects the command
+could estimate. To solve this problem, you will probably have to diminish the number
+of placebos or dynamic effects requested. See the help file for more information on the
+maximum number of dynamic effects and placebos the command can compute.
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic dynamic(1) average_effect placebo(1) longdiff_placebo breps(5) cluster(region) threshold_stable_treatment
+option threshold_stable_treatment incorrectly specified
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic dynamic(1) average_effect placebo(1) longdiff_placebo breps(5) cluster(region) threshold_stable_treatment(5)
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 |  .0047972   .0401118  -.0738219   .0834163         20          5 
+    Effect_1 |  .0225546   .0192797  -.0152336   .0603428         22          6 
+     Average | -.0040333   .0076807  -.0190874   .0110209         42         11 
+   Placebo_1 |  .0214371   .0405087    -.05796   .1008342         15          4 
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. ereturn list
+
+scalars:
+           e(effect_0) =  .0047971725463867
+        e(se_effect_0) =  .0401117742362075
+         e(N_effect_0) =  20
+  e(N_switchers_effec
+    t_0)               =  5
+           e(effect_1) =  .0225545962651571
+        e(se_effect_1) =  .0192796795102901
+         e(N_effect_1) =  22
+  e(N_switchers_effec
+    t_1)               =  6
+          e(placebo_1) =  .0214371085166931
+       e(se_placebo_1) =  .0405087154687932
+        e(N_placebo_1) =  15
+  e(N_switchers_place
+    bo_1)              =  4
+    e(cov_effects_0_1) =  .0006406370702812
+     e(effect_average) =  -.0040332516537437
+  e(se_effect_average) =  .00768067648351
+   e(N_effect_average) =  42
+  e(N_switchers_effec
+    t_average)         =  11
+
+macros:
+                e(cmd) : "did_multiplegt"
+
+matrices:
+          e(variances) :  4 x 1
+   e(didmgt_variances) :  4 x 1
+          e(estimates) :  4 x 1
+   e(didmgt_estimates) :  4 x 1
+
+. scalar t_stat = e(effect_0)/e(se_effect_0)
+
+. scalar p_val = 2*normal(-abs(t_stat))
+
+. 
+. di t_stat, p_val
+.11959512 .90480388
+
+. 
+end of do-file
+
+. codebook lnhouseprice
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+lnhouseprice                                                                                                                                                            (unlabeled)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                  Type: Numeric (float)
+
+                 Range: [10.05286,12.58769]           Units: .00001
+         Unique values: 1,042                     Missing .: 498/1,547
+
+                  Mean: 11.0475
+             Std. dev.: .650222
+
+           Percentiles:     10%       25%       50%       75%       90%
+                        10.2763   10.4783   10.9442   11.5323   12.0627
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. /* SETUP */
+. clear all           
+
+. set more off
+
+. 
+. cd "C:\Users\irony\OneDrive\Desktop\STATA\DiDFinal"
+C:\Users\irony\OneDrive\Desktop\STATA\DiDFinal
+
+. log using "DiDFinal.log", name("DiDFinal") replace
+log file already open
+r(604);
+
+end of do-file
+
+r(604);
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. /* REPLICATION */
+. use "data\maindata.dta"
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. //We need to keep unemployment, region, time, lnhouseprice, wtotaldeaths, houseprice, and totaldeaths
+. keep unemp time region lnhouseprice wtotaldeaths houseprice totaldeaths
+
+. egen totaldeathsMax = max(totaldeaths)
+
+. gen treatmentDeaths = totaldeathsMax - totaldeaths
+(392 missing values generated)
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic dynamic(2) average_effect placebo(2) longdiff_placebo breps(5) cluster(region) threshold_stable_treatment(5)
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 |  .0047972   .0390206  -.0716832   .0812776         20          5 
+    Effect_1 |  .0225546   .0246195  -.0256996   .0708088         22          6 
+    Effect_2 |  .1034652   .0442897   .0166573   .1902731         13          4 
+     Average | -.0114065   .0082055  -.0274893   .0046764         55         15 
+   Placebo_1 |  .0214371   .0429836  -.0628108    .105685         15          4 
+   Placebo_2 | -.0466793    .087899  -.2189612   .1256027         16          4 
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic dynamic(3) average_effect placebo(3) longdiff_placebo breps(5) cluster(region) threshold_stable_treatment(5)
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 |  .0047972   .0744528  -.1411304   .1507247         20          5 
+    Effect_1 |  .0225546   .0443825  -.0644351   .1095443         22          6 
+    Effect_2 |  .1034652   .0768667  -.0471935   .2541239         13          4 
+    Effect_3 |  .0307602   .0467597  -.0608887   .1224091         14          4 
+     Average | -.0130745   .0098423  -.0323654   .0062165         69         19 
+   Placebo_1 |  .0214371   .0353296  -.0478089   .0906831         15          4 
+   Placebo_2 | -.0466793   .1033782  -.2493005    .155942         16          4 
+   Placebo_3 | -.0543214   .0423384  -.1373047    .028662         15          4 
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic dynamic(5) average_effect placebo(5) longdiff_placebo breps(5) cluster(region) threshold_stable_treatment(5)
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 |  .0047972    .058349  -.1095668   .1191612         20          5 
+    Effect_1 |  .0225546   .0159172  -.0086431   .0537523         22          6 
+    Effect_2 |  .1034652    .054031  -.0024356    .209366         13          4 
+    Effect_3 |  .0307602   .0179535  -.0044287   .0659491         14          4 
+    Effect_4 |  .0142125   .0170772  -.0192588   .0476838         20          5 
+    Effect_5 |  -.019147   .0252838  -.0687032   .0304092         19          5 
+     Average | -.0110846   .0069734  -.0247525   .0025833        108         29 
+   Placebo_1 |  .0214371   .0210392  -.0197998    .062674         15          4 
+   Placebo_2 | -.0466793   .0433458   -.131637   .0382785         16          4 
+   Placebo_3 | -.0543214   .0137378  -.0812475  -.0273952         15          4 
+   Placebo_4 | -.0450227   .0248356  -.0937005   .0036551         15          4 
+   Placebo_5 |  .0154191   .0220996  -.0278962   .0587344         11          3 
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic dynamic(5) average_effect placebo(5) longdiff_placebo breps(5) cluster(region) threshold_stable_treatment(2)
+
+The command was not able to estimate the placebo 1
+periods before groups' treatment changes.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more placebos than it is possible to do in your data.
+
+The command was not able to run till the end, presumably because it could not
+estimate all placebos and dynamic effects requested. Estimates are stored in e(),
+so you can type ereturn list to see which placebos and dynamic effects the command
+could estimate. To solve this problem, you will probably have to diminish the number
+of placebos or dynamic effects requested. See the help file for more information on the
+maximum number of dynamic effects and placebos the command can compute.
+
+The command was not able to run till the end, presumably because it could not
+compute sufficiently many bootstrap replications for some of the placebos and dynamic
+effects requested. To solve this problem, you will probably have to increase the number
+of bootstrap replications.
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic dynamic(2) average_effect placebo(2) longdiff_placebo breps(5) cluster(region) threshold_stable_treatment(2)
+
+The command was not able to estimate the placebo 1
+periods before groups' treatment changes.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more placebos than it is possible to do in your data.
+
+The command was not able to run till the end, presumably because it could not
+estimate all placebos and dynamic effects requested. Estimates are stored in e(),
+so you can type ereturn list to see which placebos and dynamic effects the command
+could estimate. To solve this problem, you will probably have to diminish the number
+of placebos or dynamic effects requested. See the help file for more information on the
+maximum number of dynamic effects and placebos the command can compute.
+
+The command was not able to run till the end, presumably because it could not
+compute sufficiently many bootstrap replications for some of the placebos and dynamic
+effects requested. To solve this problem, you will probably have to increase the number
+of bootstrap replications.
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic dynamic(2) average_effect placebo(2) longdiff_placebo breps(5) cluster(region) threshold_stable_treatment(3)
+
+The command was not able to estimate the placebo 1
+periods before groups' treatment changes.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more placebos than it is possible to do in your data.
+
+The command was not able to run till the end, presumably because it could not
+estimate all placebos and dynamic effects requested. Estimates are stored in e(),
+so you can type ereturn list to see which placebos and dynamic effects the command
+could estimate. To solve this problem, you will probably have to diminish the number
+of placebos or dynamic effects requested. See the help file for more information on the
+maximum number of dynamic effects and placebos the command can compute.
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic dynamic(2) average_effect placebo(1) longdiff_placebo breps(5) cluster(region) threshold_stable_treatment(3)
+
+The command was not able to estimate the placebo 1
+periods before groups' treatment changes.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more placebos than it is possible to do in your data.
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 |  .0281377   .1021614  -.1720987    .228374          8          2 
+    Effect_1 | -.0267376   .0551226  -.1347778   .0813027          8          2 
+    Effect_2 | -.0174646          0  -.0174646  -.0174646          3          1 
+     Average |  .0019553   .0126156  -.0227714   .0266819         19          5 
+   Placebo_1 |         .          .          .          .          .          . 
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 |  .0036644   .0043991  -.0049579   .0122867        562        167 
+
+. ereturn list
+
+scalars:
+           e(effect_0) =  .0036644357664203
+        e(se_effect_0) =  .0043991387031181
+         e(N_effect_0) =  562
+  e(N_switchers_effec
+    t_0)               =  167
+
+macros:
+                e(cmd) : "did_multiplegt"
+
+matrices:
+          e(variances) :  1 x 1
+   e(didmgt_variances) :  1 x 1
+          e(estimates) :  1 x 1
+   e(didmgt_estimates) :  1 x 1
+
+. scalar t_stat = e(effect_0)/e(se_effect_0)
+
+. scalar p_val = 2*normal(-abs(t_stat))
+
+. 
+. di t_stat, p_val
+.83298937 .40485073
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. use "data\maindata.dta"
+no; dataset in memory has changed since last saved
+r(4);
+
+end of do-file
+
+r(4);
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. use "data\maindata.dta"
+no; dataset in memory has changed since last saved
+r(4);
+
+end of do-file
+
+r(4);
+
+. clear all
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. use "data\maindata.dta"
+
+. xtreg   lnhouseprice   L1.wtotaldeaths time9 time10 time12 time13 time14 time15 time16 time17 time18 time19 time21 time22 time23 time24 time25 time26 time27 time28 time29 time30
+>  time31 time32 time33 time34 time35 time36 time37 time38 time39 time40 time41 time42 time43 time44 time45 time46 time47 time48 time49 time50 time51 time52 time53 time54 time55 t
+> ime56 time57 time58 time59 time60 time61 time62 time63 time64 time65 time66 time67 time68 time69 time70 time71 time72 time73 time74 time75 time76 time77 time78 time79 time80 tim
+> e81 time82 time83 time84 time85 time86 time87 time88 time89 time90 time91 time92 time93 time94 time95 time96 time97 time98 time99 time100 time101 time102 time103 time104 time105
+> , fe cluster(region)
+
+Fixed-effects (within) regression               Number of obs     =      1,049
+Group variable: region                          Number of groups  =         11
+
+R-squared:                                      Obs per group:
+     Within  = 0.9874                                         min =         94
+     Between = 0.0009                                         avg =       95.4
+     Overall = 0.9717                                         max =         96
+
+                                                F(10,10)          =          .
+corr(u_i, Xb) = -0.0017                         Prob > F          =          .
+
+                                (Std. err. adjusted for 11 clusters in region)
+------------------------------------------------------------------------------
+             |               Robust
+lnhouseprice | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+wtotaldeaths |
+         L1. |  -.0133031   .0049215    -2.70   0.022    -.0242689   -.0023373
+             |
+       time9 |   .0389376   .0347164     1.12   0.288    -.0384154    .1162907
+      time10 |   .0708028    .023926     2.96   0.014     .0174925    .1241132
+      time12 |   .0728149   .0273828     2.66   0.024     .0118023    .1338275
+      time13 |   .0510098   .0240889     2.12   0.060    -.0026637    .1046833
+      time14 |   .0712572   .0222234     3.21   0.009     .0217403    .1207741
+      time15 |   .1253126   .0189913     6.60   0.000     .0829973    .1676279
+      time16 |   .1081245   .0237584     4.55   0.001     .0551875    .1610614
+      time17 |   .1055521   .0264494     3.99   0.003     .0466192    .1644851
+      time18 |   .1233827   .0238621     5.17   0.000     .0702146    .1765507
+      time19 |   .1323595   .0226215     5.85   0.000     .0819556    .1827634
+      time21 |    .141605   .0200833     7.05   0.000     .0968567    .1863533
+      time22 |   .1928667   .0179988    10.72   0.000     .1527629    .2329705
+      time23 |   .1931976   .0271721     7.11   0.000     .1326545    .2537407
+      time24 |   .1667251   .0301206     5.54   0.000     .0996122     .233838
+      time25 |   .1612912   .0348181     4.63   0.001     .0837117    .2388708
+      time26 |   .1827789    .026646     6.86   0.000     .1234078      .24215
+      time27 |   .2192534   .0254734     8.61   0.000     .1624951    .2760116
+      time28 |   .2019451   .0232548     8.68   0.000     .1501302    .2537601
+      time29 |   .2137819   .0199471    10.72   0.000      .169337    .2582267
+      time30 |   .2381554    .028815     8.26   0.000     .1739515    .3023593
+      time31 |   .2798895   .0251455    11.13   0.000     .2238618    .3359171
+      time32 |   .2421694   .0359133     6.74   0.000     .1621497    .3221892
+      time33 |   .2200966    .033736     6.52   0.000     .1449282    .2952651
+      time34 |   .3009978   .0412699     7.29   0.000     .2090427    .3929529
+      time35 |   .3020304   .0359507     8.40   0.000     .2219272    .3821335
+      time36 |   .3258553    .033445     9.74   0.000     .2513353    .4003753
+      time37 |   .3558368   .0379029     9.39   0.000     .2713838    .4402897
+      time38 |   .3717921   .0199639    18.62   0.000     .3273097    .4162745
+      time39 |    .368257   .0318319    11.57   0.000      .297331    .4391829
+      time40 |   .3395121   .0288421    11.77   0.000      .275248    .4037762
+      time41 |   .3415862   .0279556    12.22   0.000     .2792974    .4038751
+      time42 |   .4145538   .0445577     9.30   0.000     .3152731    .5138346
+      time43 |   .4379479   .0333415    13.14   0.000     .3636584    .5122373
+      time44 |   .4767364   .0244098    19.53   0.000     .4223479    .5311249
+      time45 |   .4560127    .030671    14.87   0.000     .3876734    .5243519
+      time46 |   .5142619   .0310663    16.55   0.000     .4450418     .583482
+      time47 |   .5386057   .0314727    17.11   0.000     .4684802    .6087312
+      time48 |   .5106269   .0356632    14.32   0.000     .4311644    .5900895
+      time49 |   .5109668   .0362615    14.09   0.000     .4301712    .5917624
+      time50 |   .5986242   .0249468    24.00   0.000     .5430393    .6542091
+      time51 |   .6072745   .0279233    21.75   0.000     .5450576    .6694914
+      time52 |   .6069867   .0251663    24.12   0.000     .5509126    .6630607
+      time53 |   .6307611   .0288872    21.84   0.000     .5663965    .6951257
+      time54 |   .7041993   .0293913    23.96   0.000     .6387114    .7696871
+      time55 |   .7308686    .017899    40.83   0.000     .6909872    .7707501
+      time56 |   .7113495   .0306968    23.17   0.000     .6429527    .7797463
+      time57 |   .7263101   .0289601    25.08   0.000     .6617831    .7908371
+      time58 |   .7340914   .0239117    30.70   0.000     .6808128      .78737
+      time59 |   .8247468   .0307465    26.82   0.000     .7562392    .8932543
+      time60 |    .817749     .02806    29.14   0.000     .7552274    .8802706
+      time61 |    .847207     .02714    31.22   0.000     .7867353    .9076786
+      time62 |   .8568972   .0209852    40.83   0.000     .8101394    .9036551
+      time63 |   .8887037   .0175394    50.67   0.000     .8496235    .9277839
+      time64 |   .8997046   .0232924    38.63   0.000     .8478058    .9516033
+      time65 |   .8944775   .0269105    33.24   0.000     .8345173    .9544378
+      time66 |    .939307   .0173286    54.21   0.000     .9006964    .9779176
+      time67 |   .9617715   .0117528    81.83   0.000     .9355846    .9879584
+      time68 |   .9834045   .0213633    46.03   0.000     .9358042    1.031005
+      time69 |    1.02947   .0332054    31.00   0.000     .9554833    1.103456
+      time70 |    1.03627   .0328246    31.57   0.000     .9631321    1.109408
+      time71 |   1.119578    .018039    62.06   0.000     1.079384    1.159771
+      time72 |   1.142625   .0314252    36.36   0.000     1.072605    1.212645
+      time73 |   1.101699   .0219906    50.10   0.000     1.052701    1.150698
+      time74 |   1.126429   .0332087    33.92   0.000     1.052436    1.200423
+      time75 |   1.131157    .031383    36.04   0.000     1.061231    1.201083
+      time76 |   1.158164   .0295762    39.16   0.000     1.092264    1.224064
+      time77 |   1.189268   .0289488    41.08   0.000     1.124766     1.25377
+      time78 |   1.231591   .0251217    49.03   0.000     1.175616    1.287565
+      time79 |   1.257826   .0255544    49.22   0.000     1.200887    1.314765
+      time80 |   1.278551   .0256905    49.77   0.000     1.221309    1.335793
+      time81 |   1.320292   .0188574    70.01   0.000     1.278275    1.362309
+      time82 |   1.324742    .017998    73.61   0.000      1.28464    1.364844
+      time83 |   1.371283   .0122023   112.38   0.000     1.344094    1.398471
+      time84 |   1.384935   .0235533    58.80   0.000     1.332455    1.437415
+      time85 |    1.38924   .0235107    59.09   0.000     1.336855    1.441625
+      time86 |   1.438155   .0204763    70.23   0.000      1.39253    1.483779
+      time87 |   1.455621   .0213707    68.11   0.000     1.408004    1.503238
+      time88 |   1.500644   .0242784    61.81   0.000     1.446548    1.554739
+      time89 |   1.527622   .0237691    64.27   0.000     1.474661    1.580582
+      time90 |    1.60864   .0290052    55.46   0.000     1.544013    1.673268
+      time91 |   1.665539   .0326004    51.09   0.000     1.592901    1.738177
+      time92 |   1.706514     .03303    51.67   0.000     1.632918    1.780109
+      time93 |   1.771774   .0270476    65.51   0.000     1.711508     1.83204
+      time94 |   1.844806   .0285894    64.53   0.000     1.781105    1.908507
+      time95 |   1.925141   .0326633    58.94   0.000     1.852363    1.997919
+      time96 |   2.013917   .0293707    68.57   0.000     1.948475    2.079359
+      time97 |   2.111561   .0302494    69.81   0.000     2.044161    2.178961
+      time98 |   2.195816    .023755    92.44   0.000     2.142886    2.248745
+      time99 |   2.222485   .0394042    56.40   0.000     2.134687    2.310283
+     time100 |   2.173394   .0272649    79.71   0.000     2.112644    2.234144
+     time101 |   2.140692   .0357242    59.92   0.000     2.061093     2.22029
+     time102 |   2.089002   .0233686    89.39   0.000     2.036933     2.14107
+     time103 |    1.96323   .0386829    50.75   0.000     1.877039    2.049421
+     time104 |   1.807142    .018135    99.65   0.000     1.766735     1.84755
+     time105 |   1.768053   .0189063    93.52   0.000     1.725927    1.810178
+       _cons |   10.18681    .013217   770.74   0.000     10.15736    10.21626
+-------------+----------------------------------------------------------------
+     sigma_u |   .0860306
+     sigma_e |  .07649551
+         rho |  .55846679   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 |  .0036644   .0042683  -.0047014   .0120302        562        167 
+
+. graph save "results/STDDiD.gph", replace
+(file results/STDDiD.gph not found)
+file results/STDDiD.gph saved
+
+. ereturn list
+
+scalars:
+           e(effect_0) =  .0036644357664203
+        e(se_effect_0) =  .0042682665009283
+         e(N_effect_0) =  562
+  e(N_switchers_effec
+    t_0)               =  167
+
+macros:
+                e(cmd) : "did_multiplegt"
+
+matrices:
+          e(variances) :  1 x 1
+   e(didmgt_variances) :  1 x 1
+          e(estimates) :  1 x 1
+   e(didmgt_estimates) :  1 x 1
+
+. scalar t_stat = e(effect_0)/e(se_effect_0)
+
+. scalar p_val = 2*normal(-abs(t_stat))
+
+. 
+. di t_stat, p_val
+.85853022 .39059975
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. //Dynamic Effects Without Threshold
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic
+
+The command was not able to estimate the treatment effect at the period when groups' treatment change.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 |         .          .          .          .          .          . 
+
+. graph save "results/DynamicDiD.gph", replace
+(file results/DynamicDiD.gph not found)
+file results/DynamicDiD.gph saved
+
+. ereturn list
+
+macros:
+                e(cmd) : "did_multiplegt"
+
+matrices:
+          e(variances) :  1 x 1
+   e(didmgt_variances) :  1 x 1
+          e(estimates) :  1 x 1
+   e(didmgt_estimates) :  1 x 1
+
+. scalar t_stat = e(effect_0)/e(se_effect_0)
+
+. scalar p_val = 2*normal(-abs(t_stat))
+
+. 
+. di t_stat, p_val
+. .
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic dynamic(4) average_effect placebo(4) longdiff_placebo breps(50) cluster(region) 
+
+The command was not able to estimate the treatment effect at the period when groups' treatment change.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+
+The command was not able to estimate the treatment effect 1
+periods after groups' treatment changes for the first time.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more dynamic effects than it is possible to do in your data.
+
+The command was not able to estimate the treatment effect 2
+periods after groups' treatment changes for the first time.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more dynamic effects than it is possible to do in your data.
+
+The command was not able to estimate the treatment effect 3
+periods after groups' treatment changes for the first time.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more dynamic effects than it is possible to do in your data.
+
+The command was not able to estimate the treatment effect 4
+periods after groups' treatment changes for the first time.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more dynamic effects than it is possible to do in your data.
+
+The command was not able to estimate the placebo 1
+periods before groups' treatment changes.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more placebos than it is possible to do in your data.
+
+The command was not able to estimate the placebo 2
+periods before groups' treatment changes.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more placebos than it is possible to do in your data.
+
+The command was not able to estimate the placebo 3
+periods before groups' treatment changes.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more placebos than it is possible to do in your data.
+
+The command was not able to estimate the placebo 4
+periods before groups' treatment changes.
+If your treatment is continuous or takes a large number of values, you may need to use
+the threshold_stable_treatment option to ensure you have groups whose treatment does not change
+over time. You may also need to use the recat_treatment option to discretize your treatment variable.
+You may also be trying to estimate more placebos than it is possible to do in your data.
+
+The command was not able to run till the end, presumably because it could not
+estimate all placebos and dynamic effects requested. Estimates are stored in e(),
+so you can type ereturn list to see which placebos and dynamic effects the command
+could estimate. To solve this problem, you will probably have to diminish the number
+of placebos or dynamic effects requested. See the help file for more information on the
+maximum number of dynamic effects and placebos the command can compute.
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic dynamic(4) average_effect placebo(4) longdiff_placebo breps(50) cluster(region) threshold_stable_treatment(4)
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 |  .0087517    .060726  -.1102712   .1277747         17          4 
+    Effect_1 |  .0117006   .0473069  -.0810209    .104422         19          5 
+    Effect_2 |  .0147885   .0299835  -.0439791   .0735562         11          3 
+    Effect_3 | -.0206961   .0413141  -.1016718   .0602796         13          4 
+    Effect_4 | -.0349905   .0350038  -.1035978   .0336169         19          5 
+     Average |  .0043852   .0169469  -.0288308   .0376011         79         21 
+   Placebo_1 | -.0423653   .0378587  -.1165684   .0318378         12          3 
+   Placebo_2 |  -.006888    .034909  -.0753097   .0615337         15          4 
+   Placebo_3 | -.0306333   .0443267  -.1175135    .056247          9          3 
+   Placebo_4 | -.0758664   .0474954  -.1689573   .0172245          9          3 
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. graph save "results/DynamicDiD.gph", replace
+file results/DynamicDiD.gph saved
+
+. ereturn list
+
+scalars:
+           e(effect_0) =  .0087517301241557
+        e(se_effect_0) =  .0607260078117383
+         e(N_effect_0) =  17
+  e(N_switchers_effec
+    t_0)               =  4
+           e(effect_1) =  .0117005825042725
+        e(se_effect_1) =  .0473068652965825
+         e(N_effect_1) =  19
+  e(N_switchers_effec
+    t_1)               =  5
+           e(effect_2) =  .014788548151652
+        e(se_effect_2) =  .0299835000778739
+         e(N_effect_2) =  11
+  e(N_switchers_effec
+    t_2)               =  3
+           e(effect_3) =  -.0206961035728455
+        e(se_effect_3) =  .0413141294233069
+         e(N_effect_3) =  13
+  e(N_switchers_effec
+    t_3)               =  4
+           e(effect_4) =  -.0349904537200928
+        e(se_effect_4) =  .0350037645496438
+         e(N_effect_4) =  19
+  e(N_switchers_effec
+    t_4)               =  5
+     e(p_jointplacebo) =  .0726101069932186
+  e(N_switchers_effec
+    t_average)         =  21
+   e(N_effect_average) =  79
+  e(se_effect_average) =  .0169469240090455
+     e(effect_average) =  .0043851660519111
+    e(cov_placebo_3_4) =  -.0011146728023764
+    e(cov_placebo_2_4) =  .0004704273184827
+    e(cov_placebo_2_3) =  .0005084079217729
+    e(cov_placebo_1_4) =  .000647052985856
+    e(cov_placebo_1_3) =  .0003556520697401
+    e(cov_placebo_1_2) =  .0007577978549415
+    e(cov_effects_3_4) =  .0003164609892818
+    e(cov_effects_2_4) =  -.0002042869720938
+    e(cov_effects_2_3) =  -.0009181720685389
+    e(cov_effects_1_4) =  .0002749592871107
+    e(cov_effects_1_3) =  -.000404627998395
+    e(cov_effects_1_2) =  .0002914545182747
+    e(cov_effects_0_4) =  .0010481937761946
+    e(cov_effects_0_3) =  -.000705439804642
+    e(cov_effects_0_2) =  .0006269007241159
+    e(cov_effects_0_1) =  .0002096565595542
+  e(N_switchers_place
+    bo_4)              =  3
+        e(N_placebo_4) =  9
+       e(se_placebo_4) =  .047495364853016
+          e(placebo_4) =  -.0758663813273112
+  e(N_switchers_place
+    bo_3)              =  3
+        e(N_placebo_3) =  9
+       e(se_placebo_3) =  .0443266566204806
+          e(placebo_3) =  -.030633290608724
+  e(N_switchers_place
+    bo_2)              =  4
+        e(N_placebo_2) =  15
+       e(se_placebo_2) =  .0349090187582017
+          e(placebo_2) =  -.0068879922231038
+  e(N_switchers_place
+    bo_1)              =  3
+        e(N_placebo_1) =  12
+       e(se_placebo_1) =  .037858723217764
+          e(placebo_1) =  -.0423653125762939
+
+macros:
+                e(cmd) : "did_multiplegt"
+
+matrices:
+          e(variances) :  10 x 1
+   e(didmgt_variances) :  10 x 1
+          e(estimates) :  10 x 1
+   e(didmgt_estimates) :  10 x 1
+
+. scalar t_stat = e(effect_0)/e(se_effect_0)
+
+. scalar p_val = 2*normal(-abs(t_stat))
+
+. 
+. di t_stat, p_val
+.14411832 .88540704
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. graph use "results/STDDiD.gph"
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. graph export "results/STDDiD.png", replace
+(file results/STDDiD.png not found)
+file results/STDDiD.png saved as PNG format
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. graph use "results/DynamicDiD.gph"
+
+. graph export "results/DynamicDiD.png", replace
+(file results/DynamicDiD.png not found)
+file results/DynamicDiD.png saved as PNG format
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 |  .0036644   .0038963  -.0039723   .0113012        562        167 
+
+. graph save "results/STDDiD.gph", replace
+file results/STDDiD.gph saved
+
+. graph export "results/STDDiD.png", replace
+file results/STDDiD.png saved as PNG format
+
+. ereturn list
+
+scalars:
+           e(effect_0) =  .0036644357664203
+        e(se_effect_0) =  .0038962975175696
+         e(N_effect_0) =  562
+  e(N_switchers_effec
+    t_0)               =  167
+
+macros:
+                e(cmd) : "did_multiplegt"
+
+matrices:
+          e(variances) :  1 x 1
+   e(didmgt_variances) :  1 x 1
+          e(estimates) :  1 x 1
+   e(didmgt_estimates) :  1 x 1
+
+. scalar t_stat = e(effect_0)/e(se_effect_0)
+
+. scalar p_val = 2*normal(-abs(t_stat))
+
+. 
+. list t_stat, p_val
+variable t_stat not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. list t_stat p_val
+variable t_stat not found
+r(111);
+
+. di t_stat
+.94049177
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. di as text "T-stat: " as result t_stat
+T-stat: .94049177
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. 
+. di as text "T-stat: " as result t_stat
+T-stat: .94049177
+
+. di as text "P-Test: " as result p_val
+P-Test: .34696537
+
+. 
+end of do-file
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. did_multiplegt lnhouseprice region time totaldeaths, robust_dynamic dynamic(4) average_effect placebo(4) longdiff_placebo breps(50) cluster(region) threshold_stable_treatment(4)
+
+DID estimators of the instantaneous treatment effect, of dynamic treatment effects if the dynamic option is used, and of placebo tests of the parallel trends assumption if the
+placebo option is used. The estimators are robust to heterogeneous effects, and to dynamic effects if the robust_dynamic option is used.
+
+             |  Estimate         SE      LB CI      UB CI          N  Switchers 
+-------------+------------------------------------------------------------------
+    Effect_0 |  .0087517   .0570925  -.1031495    .120653         17          4 
+    Effect_1 |  .0117006   .0394071  -.0655374   .0889385         19          5 
+    Effect_2 |  .0147885   .0237909  -.0318416   .0614187         11          3 
+    Effect_3 | -.0206961   .0370968  -.0934058   .0520136         13          4 
+    Effect_4 | -.0349905    .041587  -.1165009     .04652         19          5 
+     Average |  .0043852   .0171007  -.0291322   .0379026         79         21 
+   Placebo_1 | -.0423653   .0473111   -.135095   .0503644         12          3 
+   Placebo_2 |  -.006888   .0343224  -.0741599   .0603839         15          4 
+   Placebo_3 | -.0306333   .0427098  -.1143446    .053078          9          3 
+   Placebo_4 | -.0758664   .0470621  -.1681081   .0163753          9          3 
+
+. graph save "results/DynamicDiD.gph"
+file results/DynamicDiD.gph already exists
+r(602);
+
+end of do-file
+
+r(602);
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. graph save "results/DynamicDiD.gph", replace
+file results/DynamicDiD.gph saved
+
+. graph export "results/DynamicDiD.png", replace
+could not find Graph window
+r(693);
+
+end of do-file
+
+r(693);
+
+. do "C:\Users\irony\AppData\Local\Temp\STD65dc_000000.tmp"
+
+. ereturn list
+
+scalars:
+           e(effect_0) =  .0087517301241557
+        e(se_effect_0) =  .0570924801980875
+         e(N_effect_0) =  17
+  e(N_switchers_effec
+    t_0)               =  4
+           e(effect_1) =  .0117005825042725
+        e(se_effect_1) =  .039407111923469
+         e(N_effect_1) =  19
+  e(N_switchers_effec
+    t_1)               =  5
+           e(effect_2) =  .014788548151652
+        e(se_effect_2) =  .0237908996028127
+         e(N_effect_2) =  11
+  e(N_switchers_effec
+    t_2)               =  3
+           e(effect_3) =  -.0206961035728455
+        e(se_effect_3) =  .0370968089774673
+         e(N_effect_3) =  13
+  e(N_switchers_effec
+    t_3)               =  4
+           e(effect_4) =  -.0349904537200928
+        e(se_effect_4) =  .0415869669094205
+         e(N_effect_4) =  19
+  e(N_switchers_effec
+    t_4)               =  5
+     e(p_jointplacebo) =  .0065624299782178
+  e(N_switchers_effec
+    t_average)         =  21
+   e(N_effect_average) =  79
+  e(se_effect_average) =  .0171007128296976
+     e(effect_average) =  .0043851660519111
+    e(cov_placebo_3_4) =  -.0015155194957262
+    e(cov_placebo_2_4) =  .0002927987453817
+    e(cov_placebo_2_3) =  .0002462569957452
+    e(cov_placebo_1_4) =  .0004504818848053
+    e(cov_placebo_1_3) =  .0001283979417969
+    e(cov_placebo_1_2) =  .0009203987507636
+    e(cov_effects_3_4) =  .0006429500044619
+    e(cov_effects_2_4) =  -.0003778891019345
+    e(cov_effects_2_3) =  -.0006444182619716
+    e(cov_effects_1_4) =  .0005753826692551
+    e(cov_effects_1_3) =  .0003666601694133
+    e(cov_effects_1_2) =  -.0000645934081718
+    e(cov_effects_0_4) =  .0005307880192711
+    e(cov_effects_0_3) =  -.000536837674814
+    e(cov_effects_0_2) =  .0005124793268267
+    e(cov_effects_0_1) =  9.75415937924e-06
+  e(N_switchers_place
+    bo_4)              =  3
+        e(N_placebo_4) =  9
+       e(se_placebo_4) =  .047062086241765
+          e(placebo_4) =  -.0758663813273112
+  e(N_switchers_place
+    bo_3)              =  3
+        e(N_placebo_3) =  9
+       e(se_placebo_3) =  .0427098491658336
+          e(placebo_3) =  -.030633290608724
+  e(N_switchers_place
+    bo_2)              =  4
+        e(N_placebo_2) =  15
+       e(se_placebo_2) =  .0343223827838442
+          e(placebo_2) =  -.0068879922231038
+  e(N_switchers_place
+    bo_1)              =  3
+        e(N_placebo_1) =  12
+       e(se_placebo_1) =  .0473110638040058
+          e(placebo_1) =  -.0423653125762939
+
+macros:
+                e(cmd) : "did_multiplegt"
+
+matrices:
+          e(variances) :  10 x 1
+   e(didmgt_variances) :  10 x 1
+          e(estimates) :  10 x 1
+   e(didmgt_estimates) :  10 x 1
+
+. scalar t_stat = e(effect_0)/e(se_effect_0)
+
+. scalar p_val = 2*normal(-abs(t_stat))
+
+. 
+. di as text "T-stat: " as result t_stat
+T-stat: .15329042
+
+. di as text "P-Test: " as result p_val
+P-Test: .87816926
+
+. 
+end of do-file
+
+. exit, clear
